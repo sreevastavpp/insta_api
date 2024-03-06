@@ -6,8 +6,11 @@
 
     <div class="row">
         {% for img in images %}
-        <img src="{{ url_for('static', filename='uploads/' + img) }}" height="100">
+        <h1>{{img}}</h1>
+        <img src="{{ url_for('static', filename='img/' + img) }}" height="100">
         {% endfor %}
     </div>
 </div>
+<img src="{{url_for('static', filename='img/PXL_20240229_050654247.jpg')}}">
+
 {% endblock %}

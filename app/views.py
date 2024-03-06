@@ -15,11 +15,11 @@ def upload():
     if request.method == "POST":
         f = request.files["image"]
         filename = secure_filename(f.filename)
-        f.save(os.path.join("uploads", filename))
+        f.save(os.path.join("app/static/img", filename))
         return "File uploaded successfully"
 
 
 @bp.route("/thumbnails")
 def thumbnails():
-    img_list = os.listdir("uploads")
-    return render_template("thumbnails.html", images=img_list)
+    images = os.listdir("app/static/img")
+    return render_template("thumbnails.html", images=images)
